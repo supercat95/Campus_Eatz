@@ -3,11 +3,12 @@ import g4p_controls.*;
 PImage phone;
 PImage logo;
 
-int screen = 0;
+int screen = 2;
 
 Welcome welcome;
-Selection selection;
+locationSelection selection;
 Checkout checkout;
+TheShopping shopping;
 
 PApplet applet = this;
 
@@ -15,8 +16,7 @@ void setup() {
   size(500,685);
   phone = loadImage("iphone.png");
   logo = loadImage("logo.png");
-  
-  checkout = new Checkout();  
+
 }
 
 void draw() {
@@ -40,13 +40,18 @@ void selectScreen() {
       break;
     case 1:
       drawLogo(width/2.75,40,width/4);
-      selection = new Selection();
+      selection = new locationSelection();
       break;
     case 2:
-      checkout.drawTheCheckoutScreen();
-      break;    
+      drawLogo(width/2.75,40,width/4);
+      shopping = new TheShopping();
+      break;   
+    case 3:
+      checkout = new Checkout();  
+      break;
+    case 4:
+    
   }
-  println(screen);
 }
 
 void drawLogo(float xPos, float yPos, float dimension) {
@@ -55,4 +60,14 @@ void drawLogo(float xPos, float yPos, float dimension) {
 
 void startButton_click(GButton button, GEvent event) {
     screen = 1;
+    welcome.startButton.setVisible(false);
+}
+
+void locationDropList_click(GDropList droplist, GEvent event) {
+    screen = 2;
+    //locationSelection.locationDropList.setVisible(false);
+}
+
+void theCheckboxes_theClick(GCheckbox theCheckbox, GEvent theEvent) {
+    screen = 3;
 }
