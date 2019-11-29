@@ -20,7 +20,7 @@ void setup() {
   //selection = new Selection();
   checkout = new Checkout(applet);
   
-  screen = 1;
+  screen = 0;
 }
 
 void draw() {
