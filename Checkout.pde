@@ -1,6 +1,9 @@
 class Checkout {
+  PApplet applet;
   
-  Checkout(){}
+  Checkout(PApplet app){
+    applet = app;
+  }
   
   void drawTheCheckoutScreen() {
     
