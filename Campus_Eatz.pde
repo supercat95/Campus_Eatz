@@ -17,7 +17,7 @@ void setup() {
   logo = loadImage("logo.png");
   
   welcome = new Welcome();
-  selection = new Selection();
+  //selection = new Selection();
   checkout = new Checkout(applet);
   
   screen = 1;
@@ -44,9 +44,7 @@ void selectScreen() {
       break;
     case 1:
       drawLogo(width/2.75,40,width/4);
-      g4p_controls.GDropList.GDropList(applet, width/2.0, 182.0, width/2.0, 450.0,15); 
-      g4p_controls.GDropList.setItems(selection.locations, 0);
-      selection.drawtheSelectionScreen();
+      selection = new Selection();
       break;
     case 2:
       checkout.drawTheCheckoutScreen();
