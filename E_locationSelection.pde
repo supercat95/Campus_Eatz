@@ -12,7 +12,6 @@ class locationSelection {
     locationDropList.setItems(locations, 0);
     locationDropList.setLocalColorScheme(9); //9
     locationDropList.addEventHandler(applet, "locationDropList_click");
-    locationDropList.setVisible(true);
     
     fill(0);
     textAlign(CENTER, CENTER);

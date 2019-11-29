@@ -15,7 +15,6 @@ class Welcome {
     startButton = new GButton(applet, width/4, 490, width/2, 30, cliquez);
     startButton.setLocalColorScheme(8);
     startButton.addEventHandler(applet, "startButton_click");
-    startButton.setVisible(true);
   }
   
 } // end of Welcome class
