@@ -3,7 +3,7 @@ import g4p_controls.*;
 PImage phone;
 PImage logo;
 
-int screen;
+int screen = 0;
 
 Welcome welcome;
 Selection selection;
@@ -16,11 +16,7 @@ void setup() {
   phone = loadImage("iphone.png");
   logo = loadImage("logo.png");
   
-  //welcome = new Welcome();
-  //selection = new Selection();
-  checkout = new Checkout(applet);
-  
-  screen = 0;
+  checkout = new Checkout();  
 }
 
 void draw() {
@@ -41,7 +37,6 @@ void selectScreen() {
     case 0:
       drawLogo(120,200,width/2);
       welcome = new Welcome();
-      //welcome.drawWelcomeScreen();
       break;
     case 1:
       drawLogo(width/2.75,40,width/4);
@@ -51,8 +46,13 @@ void selectScreen() {
       checkout.drawTheCheckoutScreen();
       break;    
   }
+  println(screen);
 }
 
 void drawLogo(float xPos, float yPos, float dimension) {
     image(logo, xPos,yPos, dimension,dimension);
+}
+
+void startButton_click(GButton button, GEvent event) {
+    screen = 1;
 }
