@@ -16,7 +16,7 @@ void setup() {
   phone = loadImage("iphone.png");
   logo = loadImage("logo.png");
   
-  welcome = new Welcome();
+  //welcome = new Welcome();
   //selection = new Selection();
   checkout = new Checkout(applet);
   
@@ -25,7 +25,7 @@ void setup() {
 
 void draw() {
   background(255,255,255);
-  image(phone,width/7,0,340,685);
+  image(phone,80,0,340,685);
   
   selectScreen();
   
@@ -40,7 +40,8 @@ void selectScreen() {
   switch(screen) {
     case 0:
       drawLogo(120,200,width/2);
-      welcome.drawWelcomeScreen();
+      welcome = new Welcome();
+      //welcome.drawWelcomeScreen();
       break;
     case 1:
       drawLogo(width/2.75,40,width/4);
