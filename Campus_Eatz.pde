@@ -57,6 +57,9 @@ void setVisibilitiesToFalse() {
   theShopping.theFinishedShopping.setVisible(false);
   checkout.commandezBouton.setVisible(false);
   checkout.timeDropList.setVisible(false);
+  for (int i = 0; i < checkout.checkboxes.length; i++) {
+    checkout.checkboxes[i].setVisible(false);
+  } 
 }
 
 // ----------------------------------------------------------------
@@ -95,13 +98,20 @@ void selectScreen() {
       drawLogo(187,50,width/4);
       checkout.commandezBouton.setVisible(true);
       checkout.timeDropList.setVisible(true);
+      for (int i = 0; i < checkout.checkboxes.length; i++) {
+        checkout.checkboxes[i].setVisible(true);
+      } 
       checkout.confirmYourOrder();
       checkout.orderDetails();
       checkout.chooseATime();
+      checkout.chooseAPaymentOption();
       break;
     case 4:
       checkout.commandezBouton.setVisible(false);
       checkout.timeDropList.setVisible(false);
+      for (int i = 0; i < checkout.checkboxes.length; i++) {
+        checkout.checkboxes[i].setVisible(false);
+      } 
      
       drawLogo(120,200,width/2);
       confirmation.successDialog();
