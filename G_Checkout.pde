@@ -16,7 +16,7 @@ class Checkout {
     
     chooseATime = "Choisissez une heure :";
     timeOptions = new String[] {"2:00", "2:15", "2:30", "2:45", "3:00", "3:15", "3:30", "3:45", "4:00", "4:15", "4:30", "4:45", "5:00", "5:15", "5:30"};
-    timeDropList = new GDropList(applet, 300.0, 485.0, 90.0, 105.0); 
+    timeDropList = new GDropList(applet, 300.0, 510.0, 90.0, 105.0); 
     timeDropList.setItems(timeOptions, 0);
     timeDropList.setLocalColorScheme(9); //9
     
@@ -41,11 +41,12 @@ class Checkout {
     text("$1.99", 320, 320);
     text("$1.99", 320, 340);
     
-    text("Taxe d'État :   8.25%    $0.49", 150, 400);
-    text("TOTALE :                     $6.46", 150, 430);
+    text("Nos frais :    10.00%    $0.60", 150, 400);
+    text("Taxe d'État :   8.25%    $0.54", 150, 425);    
+    text("TOTALE :                     $7.11", 150, 475);
   }
   
   void chooseATime() {
-    text(chooseATime, 125, 500);
+    text(chooseATime, 125, 525);
   }
 } // end of Checkout class
