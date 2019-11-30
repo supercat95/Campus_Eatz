@@ -4,12 +4,10 @@ int yPos = 10;
 public void setup() {
   size(400, 240, JAVA2D);
   createGUI();
-  textSize(40);
 }
 
 public void draw() {
-  background(60, 60, 220);
-  fill(0);
+  background(125, 125, 125);
 }
 
 // From the gui tab
@@ -21,8 +19,8 @@ public void createGUI(){
   
   options = new GCheckbox[3];
   for (int i = 0; i < 3; i++) {
-    options[i] = new GCheckbox(this, 10, yPos, 120, 20, "Select State 1");
-    yPos = yPos + 15;
+    options[i] = new GCheckbox(this, 10, yPos, width/2.0, yPos, "Select State " + i);
+    yPos = yPos + 20;
     
     optGroupState.addControl(options[i]);
     options[i].setSelected(false); 
