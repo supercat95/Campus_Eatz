@@ -51,8 +51,8 @@ void initializeClasses() {
 void setVisibilitiesToFalse() {
   welcome.startButton.setVisible(false);
   selection.locationDropList.setVisible(false);
-  for (int i = 0; i < theShopping.theCheckboxes.length; i++) {
-    theShopping.theCheckboxes[i].setVisible(false);
+  for (int i = 0; i < theShopping.theTextFields.length; i++) {
+    theShopping.theTextFields[i].setVisible(false);
   }  
   theShopping.theFinishedShopping.setVisible(false);
   checkout.commandezBouton.setVisible(false);
@@ -82,16 +82,16 @@ void selectScreen() {
       
       drawLogo(width/4, 50, width/4);
       image(bagels, width/2.0, 50.0);
-      for (int i = 0; i < theShopping.theCheckboxes.length; i++) {
-        theShopping.theCheckboxes[i].setVisible(true);
+      for (int i = 0; i < theShopping.theTextFields.length; i++) {
+        theShopping.theTextFields[i].setVisible(true);
       }  
       theShopping.theFinishedShopping.setVisible(true);
       theShopping.theSelection();
       theShopping.theDisplayPrices();
       break;   
     case 3:
-      for (int i = 0; i < theShopping.theCheckboxes.length; i++) {
-        theShopping.theCheckboxes[i].setVisible(false);
+      for (int i = 0; i < theShopping.theTextFields.length; i++) {
+        theShopping.theTextFields[i].setVisible(false);
       }  
       theShopping.theFinishedShopping.setVisible(false);
       

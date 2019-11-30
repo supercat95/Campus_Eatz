@@ -3,27 +3,24 @@ class TheShopping {
   
   String[] theFlavors;
   
-  GToggleGroup theCheckOrNot;
-  GCheckbox[] theCheckboxes;
+  GTextField[] theTextFields;
   
   GButton theFinishedShopping;
   String continuez = "Cliquez pour continuer à la prochaine étape";
-  String selectionnez = "Sélectionnez ce que vous voulez"; 
+  String selectionnez = "Sélectionnez ce que vous voudriez"; 
   
   TheShopping() {
     theYPos = 250;
     
     theFlavors = new String[] {"Céréales Anciens","Raisin Canelle","Canneberge","Tout","Ail","Oignons","Plaine","Pavot","Pumpernickel","Sésame"};
-    theCheckOrNot = new GToggleGroup();
     
-    theCheckboxes = new GCheckbox[10];  
-    for (int theI = 0; theI < theCheckboxes.length; theI++) {
-      theCheckboxes[theI] = new GCheckbox(applet, 114.0, theYPos, width/2.0, 20.0, theFlavors[theI]);
+    theTextFields = new GTextField[10];  
+    for (int theI = 0; theI < theTextFields.length; theI++) {
+      theTextFields[theI] = new GTextField(applet, 114.0, theYPos, 15.0, 20.0);
+      theTextFields[theI].setText("0");
+      theTextFields[theI].setLocalColorScheme(8);
       theYPos = theYPos + 30.0;
-      theCheckboxes[theI].setLocalColor(2,#030303);
-      
-      theCheckOrNot.addControl(theCheckboxes[theI]);
-      theCheckboxes[theI].setSelected(false);
+      theTextFields[theI].setLocalColor(2,#030303);
     } 
     
     theFinishedShopping = new GButton(applet, width/4.0, 575.0, width/2.0, 30, continuez);
@@ -41,8 +38,9 @@ class TheShopping {
     theYPos = 250.0;
     textSize(13);
     textAlign(LEFT, TOP);
-    for (int theI = 0; theI < theCheckboxes.length; theI++) {
+    for (int theI = 0; theI < theTextFields.length; theI++) {
       text("$1.99", 320, theYPos);
+      text(theFlavors[theI], 138.0, theYPos);
       theYPos = theYPos + 30.0;
     }
   }
