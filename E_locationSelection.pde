@@ -1,10 +1,10 @@
-class locationSelection {
+class LocationSelection {
   String choose;
   String[] locations;
   
   GDropList locationDropList;
  
-  locationSelection() {
+  LocationSelection() {
     choose = "Choisissez un restaurant :";
     locations = new String[] {"Arnold", "Einstein Bros Bagels", "Lee", "Lawyers Inn", "The Mustang", "Starbucks at Dedman Rec", "Starbucks at Fondren Library", "Mac's Place", "P.O.D. at the Bonelli", "Cinco Taco", "Chick-Fil-A", "Steel City Pops", "Sushic", "The Market"};
     
@@ -12,7 +12,9 @@ class locationSelection {
     locationDropList.setItems(locations, 0);
     locationDropList.setLocalColorScheme(9); //9
     locationDropList.addEventHandler(applet, "locationDropList_click");
-    
+  }
+  
+  void chooseALocation() {
     fill(0);
     textAlign(CENTER, CENTER);
     text(choose, width/2,182); //, 0,30);
